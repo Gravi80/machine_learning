@@ -34,3 +34,15 @@ dataset$Country = factor(dataset$Country,
 dataset$Purchased = factor(dataset$Purchased,
 						levels=c('Yes','No'),
 						labels=c(1,0))
+
+
+
+# Splitting the dataset into Training set and Test set
+# install.packages('caTools')
+library("caTools", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+set.seed(123)
+# sample.split(dependent_column,size_of_the_training_set) will return True/False for each observation/row.
+# i.e True if the observation was choosen for Training set, False if the observation was choosen for Test set.
+split = sample.split(dataset$Purchased, SplitRatio=0.8)
+training_set = subset(dataset,split==TRUE)
+test_set =subset(dataset,split==FALSE)

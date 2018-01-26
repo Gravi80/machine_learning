@@ -10,7 +10,7 @@ import pandas as pd
 dataset = pd.read_csv('dataset/Data.csv') # DataFrame
 # loc, iloc[rows, columns]
 features = dataset.iloc[:, :3].values	# Matrix/Features from Independent variables
-dependent_var = dataset.iloc[:, 3].values # Dependent variable
+dependent = dataset.iloc[:, 3].values # Dependent variable
 
 
 
@@ -47,7 +47,15 @@ features = onehotencoder.fit_transform(features).toarray()
 # For Purchased column/variable we don't need to use OneHotEncoder. 
 # Since this is a dependent Variable, the ML model will know that its a category and there is no 
 # comparable relation between the two
-labelencoder_dependent_var = LabelEncoder()
-dependent_var = labelencoder_dependent_var.fit_transform(dependent_var)
+labelencoder_dependent = LabelEncoder()
+dependent = labelencoder_dependent.fit_transform(dependent)
 
+
+
+
+# Splitting the dataset into Training set and Test set
+from sklearn.cross_validation import train_test_split
+# train_test_split(fetures/dependent variable_metrix,Independent variable,
+# 				   size_of_the_test_set[0.5 => 50% of the data going to testset, best => 0.2 - 0.25])
+features_train,features_tests,dependent_train,dependent_tests = train_test_split(features,dependent,test_size=0.2, random_state=0)
 
