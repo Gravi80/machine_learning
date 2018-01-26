@@ -12,3 +12,17 @@ We will use information from Independent Variables to predict Dependent Variable
 4). Handle the missing data. There are 2 missing data [age, salary]
 	4.1). Remove the lines/rows that have missing data [Not Recommended] 
 	4.2). Replace missing data with mean of the columns
+
+
+Categorical Data
+================
+Country[contains 3 categories] and Purchased[contains 2 categories] are categorical variables.
+
+Since ML models are based on mathematical equations so keeping text in the Categorical columns need to be encode the categorical variables into Numbers. 
+	Dummy Variables
+	===============
+	Taking country column as example, Image : dummy_variables.png
+	Instead of having 1 country column, we will have number of column equals to the number of categories. Each column will have either 1 or 0
+	Image : dummy_variables2.png
+	If we are in the France column, it will be 1 if the country is France and 0 if the country is not France.
+
