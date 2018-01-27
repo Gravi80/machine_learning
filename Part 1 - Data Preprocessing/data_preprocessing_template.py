@@ -59,3 +59,12 @@ from sklearn.cross_validation import train_test_split
 # 				   size_of_the_test_set[0.5 => 50% of the data going to testset, best => 0.2 - 0.25])
 features_train,features_tests,dependent_train,dependent_tests = train_test_split(features,dependent,test_size=0.2, random_state=0)
 
+
+
+
+# Feature Scaling
+from sklearn.preprocessing import StandardScaler
+scale_features = StandardScaler()
+features_train = scale_features.fit_transform(features_train)
+features_tests = scale_features.transform(features_tests)
+

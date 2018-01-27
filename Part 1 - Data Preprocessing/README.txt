@@ -41,3 +41,31 @@ We will build our ML model on a training dataset and will test it on a new set w
 The performance of the ML model on Test set should not be different from performance on Training set. This would mean that the ML model understood the correlations well(didn't just mugup[Overfitting]) so that it can adapt to new sets or new situations.
 
 
+Feature Scaling
+================
+A case of getting all your data on the same scale. The main advantage of scaling is to avoid attributes in greater numeric ranges dominating those in smaller numeric ranges.
+
+The Age, Salary column contains numerical values and the variables are not on the same scale.
+Age    => 27-50
+Salary => 48000-83000
+Becuase both the variables don't have same scale this will cause issues in ML model.
+
+Lots of ML models are based on Euclidean Distance (Image: EuclideanDistance).
+Age    => x-coordinate
+Salary => y-coordinate
+
+Since Salary has a much higher range the Euclidean Distance will be dominated by the salary.
+
+Country,Age,Salary,Purchased
+Spain,27,48000,Yes
+France,48,79000,Yes
+
+The Euclidean Distance b/w above observations :
+Distance b/w Salary = 79000-48000 = 31000 = Sqr(31000) = 961000000
+Distance b/w Age = 48-27 = 21 = Sqr(21) = 441
+
+In ML model it will make Age to be non-existent bcz Euclidean Distance will be dominated by Salary.
+
+Methods of Feature Scaling => Image : FeatureScalingMethods
+
+
