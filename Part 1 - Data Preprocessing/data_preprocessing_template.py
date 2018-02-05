@@ -8,6 +8,13 @@ import pandas as pd
 
 # Importing the dataset
 dataset = pd.read_csv('dataset/Data.csv') # DataFrame
+
+# Descriptive Statistics
+from pandas import set_option
+set_option('display.width', 100)
+set_option('precision', 3)
+dataset.describe()  # lists 8 statistical properties of each attribute.
+
 # loc, iloc[rows, columns]
 features = dataset.iloc[:, :3].values	# Matrix/Features from Independent variables
 dependent = dataset.iloc[:, 3].values # Dependent variable
@@ -41,6 +48,10 @@ features[:,0] = labelencoder_country.fit_transform(features[:,0])
 # in the model will take decisions by comparing these non-comparable values
 # To prevent this we will use Dummy Variables/Encoding, further README.txt
 # OneHotEncoder(column index)
+
+# A one hot encoding is a representation of categorical variables as binary vectors.
+# This first requires that the categorical values be mapped to integer values.
+# Then, each integer value is represented as a binary vector that is all zero values except the index of the integer, which is marked with a 1.
 onehotencoder = OneHotEncoder(categorical_features=[0])
 features = onehotencoder.fit_transform(features).toarray()
 

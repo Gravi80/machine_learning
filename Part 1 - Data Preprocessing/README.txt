@@ -3,6 +3,7 @@ Country, Age, Salary, Purchased
 
 First three columns[Independent Variables] are the details of a customer and the fourth[Dependent Variable] column tells customer purchased the product or not.
 
+Typically the dependent variable is expected to be of a continuous nature whereas the independent variables can take values of continuous as well as categorical nature.
 
 We will use information from Independent Variables to predict Dependent Variable.
 1). Read dataset using pandas
@@ -19,6 +20,8 @@ Handle the missing data. There are 2 missing data [age, salary]
 
 Categorical Data
 ================
+Categorical data refers to data values which represent categories - data values with a fixed and unordered number of values, for instance gender (male/female) or season (summer/winder/spring/fall).
+
 Country[contains 3 categories] and Purchased[contains 2 categories] are categorical variables.
 
 Since ML models are based on mathematical equations so keeping text in the Categorical columns need to be encode the categorical variables into Numbers. 
@@ -28,6 +31,8 @@ Since ML models are based on mathematical equations so keeping text in the Categ
 	Instead of having 1 country column, we will have number of column equals to the number of categories. Each column will have either 1 or 0
 	Image : dummy_variables2.png
 	If we are in the France column, it will be 1 if the country is France and 0 if the country is not France.
+
+	Dummy variables alternatively called as indicator variables take discrete values such as 1 or 0 marking the presence or absence of a particular category.
 
 
 Splitting the dataset into Training set and Test set
@@ -69,3 +74,14 @@ In ML model it will make Age to be non-existent bcz Euclidean Distance will be d
 Methods of Feature Scaling => Image : FeatureScalingMethods
 
 
+
+
+In a given regression model, the qualitative and quantitative can also occur together, i.e., some variables are
+qualitative and others are quantitative.
+When all explanatory variables are
+- quantitative, then the model is called as a regression model,
+- qualitative, then the model is called as an analysis of variance model and
+- quantitative and qualitative both, then the model is called as a analysis of covariance model.
+
+
+A qualitative variable, also called a categorical variable, are variables that are not numerical.
