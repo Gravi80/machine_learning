@@ -19,3 +19,11 @@ Printing numpy float list/array:
 import numpy as np
 
 np.set_printoptions(threshold=np.nan,formatter={'float': lambda x: "{0:0.0f}".format(x)})
+
+Setup
+--
+    python3 -m venv machine_learn
+    source machine_learn/bin/activate
+    pip install -r requirement.txt
+
+    python other_examples/line_equation.py
