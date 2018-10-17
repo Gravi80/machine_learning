@@ -13,6 +13,7 @@ i.e which of the spend brings better result of profit in a state OR is there any
 
 
 Multiple linear regression, gets its adjective "multiple," because it concerns the study of two or more predictor variables.
+** Equation of a plane **
 
 Image => multiple_linear_regression.png
 

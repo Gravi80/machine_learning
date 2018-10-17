@@ -1,7 +1,7 @@
 # y = w*x + b
 # w = weight [How steep the line is]
 # b = bias
-
+# by changing 'w' and 'b' we can change the line
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -36,3 +36,9 @@ for weight, bias, color in [[1, 1, '-r'], [1, 5, '-.g'], [1, 10, ':b'], [1, 15, 
     plt.plot(x, weight * x + bias, color, label=f'y={weight}x+{bias}')
 plt.legend(loc='upper left')
 plt.show()
+
+
+# https://www.youtube.com/watch?v=jc2IthslyzM
+# https://www.youtube.com/watch?v=1aPBNEKPArk
+# https://www.youtube.com/watch?v=XdM6ER7zTLk
+# https://www.youtube.com/watch?v=sXUf5kx2Gi8
